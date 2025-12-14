@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=0.5">
+<title>⌈ SPANISH FLU ⌋</title>
+<style>
+@keyframes blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0.2; }
+}
+
+@keyframes slowPulse {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #0a0806;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+  font-family: "Courier New", Courier, monospace;
+  box-sizing: border-box;
+  position: relative;
+  overflow-x: hidden;
+}
+
+@keyframes scrollDown {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(20px); }
+}
+
+#textbg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  z-index: 0;
+  user-select: none;
+  pointer-events: none;
+}
+
+#textbg-red {
+  position: absolute;
+  top: -30px;
+  left: -10px;
+  width: calc(100% + 20px);
+  height: calc(100% + 60px);
+  font-size: 8px;
+  word-wrap: break-word;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  color: rgba(120, 60, 40, 0.7);
+  line-height: 1.2;
+  letter-spacing: 2px;
+  animation: scrollDown 0.8s linear infinite;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 8px solid #3a2a15;
+  pointer-events: none;
+  z-index: 100;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(ellipse at center, transparent 30%, rgba(0,0,0,0.8) 100%);
+  pointer-events: none;
+  z-index: 5;
+}
+
+#container {
+  background-color: rgba(10, 9, 8, 0.75);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  width: 100%;
+  max-width: 700px;
+  min-height: 90vh;
+  position: relative;
+  padding: 60px 40px;
+  text-align: center;
+  border: 1px solid rgba(60, 50, 30, 0.3);
+  box-shadow: 0 0 80px rgba(0, 0, 0, 0.9);
+  z-index: 10;
+}
+
+.bracket {
+  position: absolute;
+  font-size: 48px;
+  color: #c9a227;
+  animation: blink 2.5s infinite;
+  font-weight: 100;
+}
+
+.bracket-tl { top: 20px; left: 25px; }
+.bracket-tr { top: 20px; right: 25px; }
+.bracket-bl { bottom: 20px; left: 25px; }
+.bracket-br { bottom: 20px; right: 25px; }
+
+h1 {
+  font-size: 24px;
+  font-weight: normal;
+  color: #c9a227;
+  letter-spacing: 12px;
+  margin-bottom: 15px;
+  animation: slowPulse 4s infinite;
+}
+
+.subtitle {
+  font-size: 11px;
+  color: #6b5a30;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+}
+
+.visualizer {
+  margin: 30px 0;
+  font-size: 18px;
+  letter-spacing: 8px;
+  color: #4a4030;
+}
+
+.visualizer span {
+  display: inline-block;
+  animation: blink 1.5s infinite;
+}
+
+.visualizer span:nth-child(2) { animation-delay: 0.1s; }
+.visualizer span:nth-child(3) { animation-delay: 0.2s; }
+.visualizer span:nth-child(4) { animation-delay: 0.3s; }
+.visualizer span:nth-child(5) { animation-delay: 0.4s; }
+.visualizer span:nth-child(6) { animation-delay: 0.5s; }
+.visualizer span:nth-child(7) { animation-delay: 0.6s; }
+.visualizer span:nth-child(8) { animation-delay: 0.7s; }
+.visualizer span:nth-child(9) { animation-delay: 0.8s; }
+
+#tagline {
+  font-size: 12px;
+  color: #8a7a50;
+  letter-spacing: 4px;
+  margin: 30px 0 50px 0;
+  height: 20px;
+}
+
+.divider {
+  width: 80%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #3a3020, transparent);
+  margin: 30px auto;
+}
+
+.games {
+  margin: 40px 0;
+}
+
+.games-header {
+  font-size: 10px;
+  color: #4a3a20;
+  letter-spacing: 5px;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+
+.game {
+  margin: 35px 0;
+}
+
+.game-title {
+  font-size: 13px;
+  color: #c9a227;
+  letter-spacing: 5px;
+  margin-bottom: 10px;
+}
+
+.game-title a {
+  color: #c9a227;
+  text-decoration: none;
+}
+
+.game-title a:hover {
+  color: #e8c547;
+  text-decoration: underline;
+}
+
+.game-desc {
+  font-size: 11px;
+  color: #5a4a28;
+  letter-spacing: 2px;
+  line-height: 1.8;
+}
+
+.game-date {
+  font-size: 10px;
+  color: #3a3018;
+  letter-spacing: 3px;
+  margin-top: 8px;
+}
+
+.nav {
+  margin: 40px 0;
+  font-size: 11px;
+  letter-spacing: 3px;
+}
+
+.nav a {
+  color: #7a6a40;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.nav a:hover {
+  color: #c9a227;
+}
+
+.nav span {
+  color: #3a3020;
+}
+
+.contact {
+  margin: 30px 0;
+  font-size: 10px;
+  color: #4a4028;
+  letter-spacing: 3px;
+}
+
+.contact a {
+  color: #6a5a38;
+  text-decoration: none;
+}
+
+.contact a:hover {
+  color: #c9a227;
+}
+
+.status {
+  margin-top: 50px;
+  font-size: 11px;
+  letter-spacing: 4px;
+}
+
+.status-text {
+  color: #5a4a28;
+  margin-bottom: 8px;
+}
+
+.status-link a {
+  color: #c9a227;
+  text-decoration: none;
+}
+
+.status-link a:hover {
+  text-decoration: underline;
+}
+
+.footer {
+  margin-top: 50px;
+  font-size: 9px;
+  color: #2a2518;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+</style>
+</head>
+
+<body>
+
+<div id="textbg">
+  <div id="textbg-red"></div>
+</div>
+
+<script>
+  const text = "FORBIDDEN BY CONSENSUS!";
+  const repeat = 8000;
+  let content = '';
+  for (let i = 0; i < repeat; i++) {
+    const spaces = ' '.repeat(Math.floor(Math.random() * 3) + 1);
+    content += text + spaces;
+  }
+  document.getElementById('textbg-red').textContent = content;
+</script>
+
+<div id="container">
+  
+  <span class="bracket bracket-tl">⌈</span>
+  <span class="bracket bracket-tr">⌉</span>
+  <span class="bracket bracket-bl">⌊</span>
+  <span class="bracket bracket-br">⌋</span>
+  
+  <h1>SPANISH FLU</h1>
+  
+  <div class="subtitle">one-man outbreak &nbsp;•&nbsp; est. 1918</div>
+  
+  <div class="visualizer">
+    <span>║</span><span>▒</span><span>░</span>
+    <span>║</span><span>▒</span><span>░</span>
+    <span>◆</span>
+    <span>░</span><span>▒</span><span>║</span>
+    <span>░</span><span>▒</span><span>║</span>
+  </div>
+  
+  <div id="tagline">[forbidden by consensus]</div>
+  
+  <script>
+    const phrases = [
+      "[forbidden by consensus]",
+      "[prohibido por consenso]",
+      "[durch konsens verboten]",
+      "[interdit par consensus]",
+      "[共识禁止]",
+      "[合意により禁止]",
+      "[запрещено консенсусом]",
+      "[zakazane konsensusem]"
+    ];
+    
+    const el = document.getElementById("tagline");
+    let i = 0;
+    
+    setInterval(() => {
+      i = (i + 1) % phrases.length;
+      el.textContent = phrases[i];
+    }, 2000);
+  </script>
+  
+  <div class="divider"></div>
+  
+  <div class="games">
+    
+    <div class="games-header">⚠ EXPOSURE WARNING ⚠</div>
+    
+    <div class="game">
+      <div class="game-title"><a href="#">THOR VS THE SEWER DWARVES</a></div>
+      <div class="game-desc">Whack-a-mole mayhem. Brooklyn, NY.</div>
+      <div class="game-date">⌈ March 2025 ⌋</div>
+    </div>
+    
+    <div class="game">
+      <div class="game-title"><a href="#">CHRISTMAS MARKET MAYHEM</a></div>
+      <div class="game-desc">Berlin. Breitscheidplatz. 2016.</div>
+      <div class="game-date">⌈ December 2025 ⌋</div>
+    </div>
+    
+  </div>
+  
+  <div class="divider"></div>
+  
+  <div class="nav">
+    <a href="mailto:mrflu1918@proton.me">mrflu1918@proton.me</a>
+    <span>︱</span>
+    <a href="https://x.com/gripe1918" target="_blank">@gripe1918</a>
+  </div>
+  
+  
+  
+  <div class="status">
+    <div class="status-text">You are not infected.</div>
+    <div class="status-link"><a href="#">[Get infected]</a></div>
+  </div>
+  
+  <div class="footer">est. 1918</div>
+  
+</div>
+
+</body>
+</html>
