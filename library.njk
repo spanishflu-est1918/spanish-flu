@@ -7,8 +7,6 @@ permalink: /library/
 <div class="site-nav">
   <a href="/">HOME</a>
   <span class="sep">︱</span>
-  <a href="/blog/">BLOG</a>
-  <span class="sep">︱</span>
   <a href="/library/" class="active">LIBRARY</a>
   <span class="sep">︱</span>
   <a href="#" onclick="window.spawnRadio(); return false;">RADIO</a>
@@ -24,16 +22,16 @@ permalink: /library/
 <div class="divider"></div>
 
 <div class="library-list">
-  {% for book in collections.books %}
+  {% for item in collections.writings %}
   <article class="library-item">
     <h2 class="library-item-title">
-      <a href="{{ book.url }}">{{ book.data.title }}</a>
+      <a href="{{ item.url }}">{{ item.data.title }}</a>
     </h2>
-    {% if book.data.author %}
-    <div class="library-item-author">{{ book.data.author }}</div>
+    {% if item.data.date %}
+    <div class="library-item-date">⌈ {{ item.date.toDateString() }} ⌋</div>
     {% endif %}
-    {% if book.data.description %}
-    <p class="library-item-desc">{{ book.data.description }}</p>
+    {% if item.data.excerpt or item.data.description %}
+    <p class="library-item-desc">{{ item.data.excerpt or item.data.description }}</p>
     {% endif %}
   </article>
   {% else %}

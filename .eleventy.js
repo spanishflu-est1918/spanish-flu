@@ -5,17 +5,10 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("css");
   eleventyConfig.addPassthroughCopy("assets");
   
-  // Blog collection
-  eleventyConfig.addCollection("posts", function(collectionApi) {
-    return collectionApi.getFilteredByGlob("blog/*.md").sort((a, b) => {
-      return b.date - a.date;
-    });
-  });
-  
-  // Library collection
-  eleventyConfig.addCollection("books", function(collectionApi) {
+  // Library collection (all writings)
+  eleventyConfig.addCollection("writings", function(collectionApi) {
     return collectionApi.getFilteredByGlob("library/*.md").sort((a, b) => {
-      return a.data.title.localeCompare(b.data.title);
+      return b.date - a.date;
     });
   });
 
