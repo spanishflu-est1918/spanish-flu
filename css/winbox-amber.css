@@ -1,0 +1,115 @@
+/* ══════════════════════════════════════════════════════════════
+   WINBOX AMBER TERMINAL THEME
+   ══════════════════════════════════════════════════════════════ */
+
+.winbox.amber-terminal {
+  background: var(--void);
+  border: 1px solid var(--amber);
+  box-shadow: 
+    0 0 20px rgba(180, 100, 30, 0.3),
+    0 0 40px rgba(0, 0, 0, 0.8),
+    inset 0 0 60px rgba(0, 0, 0, 0.5);
+  font-family: "Courier New", Courier, monospace;
+}
+
+.winbox.amber-terminal .wb-header {
+  background: linear-gradient(180deg, 
+    rgba(90, 74, 40, 0.9) 0%, 
+    rgba(60, 48, 32, 0.95) 100%);
+  border-bottom: 1px solid var(--amber);
+}
+
+.winbox.amber-terminal .wb-title {
+  color: var(--amber);
+  font-family: "Courier New", Courier, monospace;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px rgba(180, 100, 30, 0.5);
+}
+
+.winbox.amber-terminal .wb-icon {
+  filter: sepia(1) hue-rotate(-10deg) saturate(3) brightness(0.8);
+}
+
+.winbox.amber-terminal .wb-control {
+  filter: sepia(1) hue-rotate(-10deg) saturate(2);
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.winbox.amber-terminal .wb-control:hover {
+  opacity: 1;
+}
+
+.winbox.amber-terminal .wb-body {
+  background: var(--void);
+  color: var(--amber);
+}
+
+/* Minimize animation */
+.winbox.amber-terminal.min .wb-body {
+  display: none;
+}
+
+/* Focus state - extra glow */
+.winbox.amber-terminal.focus {
+  box-shadow: 
+    0 0 30px rgba(180, 100, 30, 0.5),
+    0 0 60px rgba(0, 0, 0, 0.8),
+    inset 0 0 60px rgba(0, 0, 0, 0.5);
+}
+
+.winbox.amber-terminal.focus .wb-header {
+  background: linear-gradient(180deg, 
+    rgba(120, 90, 50, 0.95) 0%, 
+    rgba(80, 60, 40, 0.95) 100%);
+}
+
+.winbox.amber-terminal.focus .wb-title {
+  text-shadow: 0 0 15px rgba(180, 100, 30, 0.8);
+}
+
+/* Scanline effect */
+.winbox.amber-terminal .wb-body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.1) 2px,
+    rgba(0, 0, 0, 0.1) 4px
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Radio player specific */
+.radio-player {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.radio-player iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.radio-status {
+  font-size: 9px;
+  color: var(--brown);
+  letter-spacing: 2px;
+  margin-top: 8px;
+  text-align: center;
+}

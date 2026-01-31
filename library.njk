@@ -1,0 +1,50 @@
+---
+layout: base.njk
+title: Library
+permalink: /library/
+---
+
+<div class="site-nav">
+  <a href="/">HOME</a>
+  <span class="sep">︱</span>
+  <a href="/blog/">BLOG</a>
+  <span class="sep">︱</span>
+  <a href="/library/" class="active">LIBRARY</a>
+  <span class="sep">︱</span>
+  <a href="#" onclick="window.spawnRadio(); return false;">RADIO</a>
+</div>
+
+<div class="divider"></div>
+
+<header class="page-header">
+  <h1 class="page-title">LIBRARY</h1>
+  <div class="page-subtitle">⌈ FORBIDDEN ARCHIVES ⌋</div>
+</header>
+
+<div class="divider"></div>
+
+<div class="library-list">
+  {% for book in collections.books %}
+  <article class="library-item">
+    <h2 class="library-item-title">
+      <a href="{{ book.url }}">{{ book.data.title }}</a>
+    </h2>
+    {% if book.data.author %}
+    <div class="library-item-author">{{ book.data.author }}</div>
+    {% endif %}
+    {% if book.data.description %}
+    <p class="library-item-desc">{{ book.data.description }}</p>
+    {% endif %}
+  </article>
+  {% else %}
+  <p class="library-item-desc">The archives are empty...</p>
+  {% endfor %}
+</div>
+
+<div class="divider"></div>
+
+<nav class="post-nav">
+  <a href="/">← RETURN TO ORIGIN</a>
+</nav>
+
+<div class="footer">est. 1918</div>

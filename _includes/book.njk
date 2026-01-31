@@ -1,0 +1,36 @@
+---
+layout: base.njk
+---
+
+<div class="site-nav">
+  <a href="/">HOME</a>
+  <span class="sep">︱</span>
+  <a href="/blog/">BLOG</a>
+  <span class="sep">︱</span>
+  <a href="/library/" class="active">LIBRARY</a>
+  <span class="sep">︱</span>
+  <a href="#" onclick="window.spawnRadio(); return false;">RADIO</a>
+</div>
+
+<div class="divider"></div>
+
+<header class="book-header">
+  <h1 class="book-title">⌈ {{ title }} ⌋</h1>
+  {% if author %}
+  <div class="book-author">{{ author }}</div>
+  {% endif %}
+</header>
+
+<div class="divider"></div>
+
+<div class="book-content">
+  {{ content | safe }}
+</div>
+
+<div class="divider"></div>
+
+<nav class="book-nav">
+  <a href="/library/">← RETURN TO LIBRARY</a>
+</nav>
+
+<div class="footer">est. 1918</div>

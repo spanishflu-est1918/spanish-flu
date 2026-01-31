@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=0.5">
+<title>{% if title %}{{ title }} ⌈ SPANISH FLU ⌋{% else %}⌈ SPANISH FLU ⌋{% endif %}</title>
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/winbox@0.2.82/dist/css/winbox.min.css">
+<link rel="stylesheet" href="/css/winbox-amber.css">
+</head>
+
+<body>
+
+<div id="textbg">
+  <div id="textbg-red"></div>
+</div>
+
+<script>
+  const phrases = [
+    "FORBIDDENBYCONSENSUS",
+    "VERBOTENDURCHKONSENS",
+    "PROHIBIDOPORCONSENSО",
+    "INTERDITPARCONSENSUS",
+    "VIETATOPERCONSENSО",
+    "禁止共识",
+    "合意により禁止",
+    "ЗАПРЕЩЕНОКОНСЕНСУСОМ",
+    "ZAKAZANEKONSENSUSEM",
+    "FORBUDTVEDKONSENSUS",
+    "금지된합의",
+    "אסורבהסכמה",
+    "ممنوعبالإجماع",
+    "YASAKLANMIŞKONSENSÜS",
+    "ΑΠΑΓΟΡΕΥΜΕΝΟ",
+    "CẤMTHEOĐỒNGTHUẬN"
+  ];
+  const repeat = 800;
+  let content = '';
+  for (let i = 0; i < repeat; i++) {
+    const shuffled = [...phrases].sort(() => Math.random() - 0.5);
+    content += shuffled.join('');
+  }
+  document.getElementById('textbg-red').textContent = content + content;
+</script>
+
+<div id="container">
+  
+  <span class="bracket bracket-tl">⌈</span>
+  <span class="bracket bracket-tr">⌉</span>
+  <span class="bracket bracket-bl">⌊</span>
+  <span class="bracket bracket-br">⌋</span>
+  
+  {{ content | safe }}
+  
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/winbox@0.2.82/dist/winbox.bundle.min.js"></script>
+<script src="/assets/radio.js"></script>
+
+</body>
+</html>

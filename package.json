@@ -1,0 +1,27 @@
+{
+  "name": "spanish-flu",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx @11ty/eleventy",
+    "start": "npx @11ty/eleventy --serve",
+    "dev": "npx @11ty/eleventy --serve --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spanishflu-est1918/spanish-flu.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/spanishflu-est1918/spanish-flu/issues"
+  },
+  "homepage": "https://github.com/spanishflu-est1918/spanish-flu#readme",
+  "dependencies": {
+    "@11ty/eleventy": "^3.1.2",
+    "markdown-it": "^14.1.0"
+  }
+}
