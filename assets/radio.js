@@ -27,7 +27,7 @@
       html: `
         <div class="radio-player">
           <iframe 
-            src="https://www.youtube-nocookie.com/embed/5A9OIIapSko?autoplay=1&loop=1&playlist=5A9OIIapSko" 
+            src="https://www.youtube-nocookie.com/embed/5A9OIIapSko?autoplay=1" 
             allow="autoplay; encrypted-media" 
             allowfullscreen>
           </iframe>
