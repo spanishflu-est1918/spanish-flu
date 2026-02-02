@@ -249,6 +249,10 @@ h1 {
   color: var(--amber);
 }
 
+.nav a:visited {
+  color: var(--amber-dim);
+}
+
 .nav span {
   color: var(--brown-darker);
 }
