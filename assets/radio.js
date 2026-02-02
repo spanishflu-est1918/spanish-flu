@@ -17,7 +17,7 @@
       title: "⌈ RADIO ⌋",
       class: ["amber-terminal"],
       width: "320px",
-      height: "220px",
+      height: "140px",
       x: "right",
       y: "bottom",
       right: 20,
@@ -25,13 +25,10 @@
       background: "#0a0806",
       border: 1,
       html: `
-        <div class="radio-player">
-          <iframe 
-            src="https://www.youtube-nocookie.com/embed/5A9OIIapSko?autoplay=1" 
-            allow="autoplay; encrypted-media" 
-            allowfullscreen>
-          </iframe>
-          <div class="radio-status">ATB — 9PM (Till I Come)</div>
+        <div class="radio-player" style="padding: 20px; text-align: center;">
+          <audio id="radio-audio" src="/assets/atb-9pm.mp3" autoplay loop></audio>
+          <div class="radio-status" style="color: #b4641e; font-family: 'Courier New', monospace; margin-bottom: 15px;">ATB — 9PM (Till I Come)</div>
+          <button onclick="document.getElementById('radio-audio').paused ? document.getElementById('radio-audio').play() : document.getElementById('radio-audio').pause()" style="background: #1a1510; color: #b4641e; border: 1px solid #b4641e; padding: 8px 20px; cursor: pointer; font-family: 'Courier New', monospace;">⏯ PLAY/PAUSE</button>
         </div>
       `,
       onclose: function() {
@@ -40,10 +37,5 @@
       }
     });
   };
-  
-  // Auto-spawn radio on page load (optional - comment out to disable)
-  // window.addEventListener('load', function() {
-  //   setTimeout(window.spawnRadio, 1000);
-  // });
   
 })();
